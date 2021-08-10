@@ -1,0 +1,24 @@
+<div class="container jumbotron mt-5">
+    <h2 class="text-success text-center">Add Movie</h2>
+    <form
+        class="add-movie-form"    
+        (ngSubmit) = "addMovie();"
+    >
+        <div class="container d-flex flex-column">
+            <label for="Name ml-3">Enter Movie Name</label>
+            <input class="form-control mb-3" type="text" name="Name" id="Name" [(ngModel)]="currentMovie.Name"/>
+            <label for="City ml-3">Enter City</label>
+            <input class="form-control mb-3" type="text" name="City" id="City" [(ngModel)]="currentMovie.City"/>
+            <label for="NumberOfHalls ml-3">Enter Number of Halls in the Movie</label>
+            <input class="form-control mb-3" type="number" name="NumberOfHalls" id="NumberOfHalls" [(ngModel)]="currentMovie.NumberOfHalls"/>
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-success" type="submit">
+                    Add Movie
+                </button>
+                <a class="btn btn-danger" [routerLink]="['/admin']"> 
+                    Back to Admin Portal
+                </a>
+            </div>
+        </div>
+    </form>
+</div>

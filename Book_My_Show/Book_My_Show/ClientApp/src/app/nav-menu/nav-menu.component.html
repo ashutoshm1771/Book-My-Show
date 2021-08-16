@@ -1,0 +1,44 @@
+<header>
+  <nav
+    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom box-shadow mb-3"
+  >
+    <div class="container">
+      <a class="navbar-brand" [routerLink]="['/']"><img src="../../assets/logo.jpg"></a>
+      <div
+        class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
+      >
+        <ul class="navbar-nav flex-grow">
+          <li
+            class="nav-item"
+            [routerLinkActive]="['link-active']"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <a class="nav-link text-light" [routerLink]="['/']">
+              <input [(ngModel)]="movieName" #ctrl="ngModel" class="form-control movie-search-bar" placeholder="Search for Movies">
+            </a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-light">
+              <select class="form-control city-dropdown bg-dark text-light" id='city' name='City' [(ngModel)]="selectedCity">
+                <option value="" disabled selected>Select City</option>
+                <option *ngFor="let city of cities">
+                  {{city}}
+                </option> 
+              </select>
+            </a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-light">
+              <button class="btn btn-danger" (click)="searchMovies()">Search Movies</button>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <a class="btn btn-secondary" [routerLink]="['/admin']">
+        Admin Portal
+      </a>
+    </div>
+  </nav>
+</header>

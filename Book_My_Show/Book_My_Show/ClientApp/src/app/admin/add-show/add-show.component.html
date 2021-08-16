@@ -1,0 +1,40 @@
+<div class="container jumbotron mt-5">
+    <h2 class="text-success text-center">Add Show</h2>
+    <form
+        class="add-show-form"    
+        (ngSubmit) = "addShow();"
+    >
+        <div class="container d-flex flex-column">
+            
+            <label for="ShowTime ml-3">Enter Show Time</label>
+            <select class="form-control mb-3 time-dropdown text-dark" name="ShowTime" id="ShowTime" [(ngModel)]="currentShow.Time">
+                <option *ngFor="let showTime of showTimes">
+                  {{showTime}}
+                </option> 
+            </select>
+
+            <label for="Movie ml-3">Select Movie</label>
+            <select class="form-control mb-3 movie-dropdown text-dark" name="Movie" id="Movie" [(ngModel)]="currentMovie.Name">
+                <option *ngFor="let movie of movies">
+                  {{movie.Name}}
+                </option> 
+            </select>
+            
+            <label for="Theatre ml-3">Select Theatre</label>
+            <select class="form-control mb-3 theatre-dropdown text-dark" name="Theatre" id="Theatre" [(ngModel)]="currentTheatre.Name">
+                <option *ngFor="let theatre of theatres">
+                  {{theatre.Name}}
+                </option> 
+            </select>
+            
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-success" type="submit">
+                    Add Show
+                </button>
+                <a class="btn btn-danger" [routerLink]="['/admin']"> 
+                    Back to Admin Portal
+                </a>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,51 @@
+<div class="container jumbotron mt-5">
+    <h2 class="text-success text-center">Add Movie</h2>
+    <form
+        class="add-movie-form"    
+        (ngSubmit) = "addMovie();"
+    >
+        <div class="container d-flex flex-column">
+
+            <label for="Name">Enter Movie Name</label>
+            <input class="form-control mb-3" type="text" name="Name" required id="Name" [(ngModel)]="currentMovie.Name"/>
+            
+            <label for="ImbdRating">Enter Movie IMDB Rating</label>
+            <input class="form-control mb-3" type="text" name="ImbdRating" required id="ImbdRating" [(ngModel)]="currentMovie.ImbdRating"/>
+            
+            <label for="Category">Enter Category</label>
+            <select class="form-control mb-3 category-dropdown text-dark" name="Category" id="Category" [(ngModel)]="currentMovie.Category">
+                <option *ngFor="let category of categories">
+                  {{category}}
+                </option> 
+            </select>
+            
+            <label for="Genre">Enter Movie Genre</label>
+            <select class="form-control mb-3 genre-dropdown text-dark" name="Genre" id="Genre" [(ngModel)]="currentMovie.Genre">
+                <option *ngFor="let genre of genres">
+                  {{genre}}
+                </option> 
+            </select>
+            
+            <label for="ReleaseDate">Enter Movie Release Date</label>
+            <input class="form-control mb-3" type="date" name="ReleaseDate" required id="ReleaseDate" [(ngModel)]="currentMovie.ReleaseDate"/>
+            
+            <label for="ActorName">Enter Actor Name</label>
+            <input class="form-control mb-3" type="text" name="ActorName" id="ActorName" [(ngModel)]="currentMovie.ActorName"/>
+            
+            <label for="ActressName">Enter Actress Name</label>
+            <input class="form-control mb-3" type="text" name="ActressName" id="ActressName" [(ngModel)]="currentMovie.ActressName"/>
+            
+            <label for="ThemePhotoPath">Upload Theme Photo</label>
+            <input class="form-control mb-3" type="text" name="ThemePhotoPath" required id="ThemePhotoPath" [(ngModel)]="currentMovie.ThemePhotoPath"/>
+            
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-success" type="submit">
+                    Add Movie
+                </button>
+                <a class="btn btn-danger" [routerLink]="['/admin']"> 
+                    Back to Admin Portal
+                </a>
+            </div>
+        </div>
+    </form>
+</div>

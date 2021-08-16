@@ -1,0 +1,32 @@
+<div class="container jumbotron mt-5">
+    <h2 class="text-success text-center">Add Theatre</h2>
+    <form
+        class="add-theatre-form"    
+        (ngSubmit) = "addTheatre();"
+    >
+        <div class="container d-flex flex-column">
+            
+            <label for="Name ml-3">Enter Theatre Name</label>
+            <input class="form-control mb-3" type="text" name="Name" id="Name" [(ngModel)]="currentTheatre.Name"/>
+            
+            <label for="City ml-3">Enter City</label>
+            <select class="form-control mb-3 city-dropdown text-dark" name="City" id="City" [(ngModel)]="currentTheatre.City">
+                <option *ngFor="let city of cities">
+                  {{city}}
+                </option> 
+            </select>
+            
+            <label for="NumberOfHalls ml-3">Enter Number of Halls in the Theatre</label>
+            <input class="form-control mb-3" type="number" name="NumberOfHalls" id="NumberOfHalls" [(ngModel)]="currentTheatre.NumberOfHalls"/>
+            
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-success" type="submit">
+                    Add Theatre
+                </button>
+                <a class="btn btn-danger" [routerLink]="['/admin']"> 
+                    Back to Admin Portal
+                </a>
+            </div>
+        </div>
+    </form>
+</div>

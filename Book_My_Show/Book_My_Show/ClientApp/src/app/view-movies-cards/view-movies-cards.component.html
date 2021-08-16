@@ -1,0 +1,15 @@
+<div class="grid-container">
+    <div *ngFor="let show of shows" class="grid-item">
+      {{show.MovieId}}
+      {{show.Time}}
+    </div>
+</div>
+
+<button (click)="disp();">Test</button>
+
+<div class="grid-container">
+  <div *ngFor="let movie of movies" class="grid-item">
+    {{movie.Id}}
+    {{movie.Name}}
+  </div>
+</div>

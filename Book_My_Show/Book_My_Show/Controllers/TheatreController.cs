@@ -30,14 +30,14 @@ namespace Book_My_Show.Controllers
             return new JsonResult("Added Successfully");
         }
 
-        [HttpGet("getById/{id}")]
+        [HttpGet("id/{id}")]
         public JsonResult Get(int id)
         {
             var movie = _theatreServices.GetById(id);
             return new JsonResult(movie);
         }
 
-        [HttpGet("getByCity/{city}")]
+        [HttpGet("city/{city}")]
         public JsonResult Get(string city)
         {
             var movie = _theatreServices.GetByCity(city);

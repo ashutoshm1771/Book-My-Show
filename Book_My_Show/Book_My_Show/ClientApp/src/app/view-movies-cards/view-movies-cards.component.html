@@ -1,15 +1,11 @@
 <div class="grid-container">
-    <div *ngFor="let show of shows" class="grid-item">
-      {{show.MovieId}}
-      {{show.Time}}
+    <div *ngFor="let show of shows" class="grid-item" (click)="displayMovie(show);">
+      <img [src]="show.ThemePhotoPath" class="movie-image"/><br/>
+      <span class="movie-name">{{show.Name}}</span><br/>
+      <div class="d-flex justify-content-between">
+        <span class="movie-category">{{show.Category}}</span><br/>
+        <span class="movie-genre">{{show.Genre}}</span><br/>
+      </div><br/>
+      <span class="movie-starcast">{{show.ActorName}} <br/> {{show.ActressName}}</span>
     </div>
-</div>
-
-<button (click)="disp();">Test</button>
-
-<div class="grid-container">
-  <div *ngFor="let movie of movies" class="grid-item">
-    {{movie.Id}}
-    {{movie.Name}}
-  </div>
 </div>

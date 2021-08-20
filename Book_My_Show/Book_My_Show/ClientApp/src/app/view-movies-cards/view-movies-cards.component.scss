@@ -1,14 +1,35 @@
 .grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    background-color: white;
-    padding: 10px;
-  }
-  .grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    margin: 10px;
-    font-size: 30px;
-    text-align: center;
-  }
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+  margin-left: 20px;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #e9ecef;
+  border-radius: 10px;
+  height: 450px;
+  width: 300px;
+  padding: 20px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.grid-item:hover {
+  border: 1px solid #edc4c0;
+  background-color: #e9ecef;
+}
+.movie-image {
+  height: 300px !important;
+  width: 250px !important;
+}
+
+.movie-name {
+  font-size: 15pt; 
+  font-family: Century Gothic;
+}
+
+.movie-category  .movie-genre{
+  font-size: small;
+}

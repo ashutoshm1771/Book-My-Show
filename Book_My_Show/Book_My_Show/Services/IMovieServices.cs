@@ -12,15 +12,9 @@ namespace Book_My_Show.Services
         
         public Movie Get(int id);
 
-        public byte[] GetImage(string Base64String);
-
         public void Update(Movie movie);
         
         public void Delete(int id);
-
-        public byte[] GetCoverPhoto(int id);
-
-        public byte[] GetThemePhoto(int id);
 
         public List<Movie> GetAll();
 

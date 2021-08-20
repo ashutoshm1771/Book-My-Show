@@ -1,0 +1,110 @@
+.ticket-container {
+    background-color: #f3f4f7;
+}
+
+.page-wrapper {
+    background-color: #f3f4f7;
+}
+
+.page-caption {
+    font-weight: 600;
+    font-size: 35pt;
+}
+
+.ticket-header {
+    font-family: Corbel;
+    font-weight: 600;
+    font-size: 35pt;
+}
+.ticket {
+    border: 5px solid #364f78;
+    background-color: #d9cebd;
+    width: 900px;
+    height: 380px;
+    margin: 0px auto;
+}
+.ticket-left {
+    flex: 1;
+}
+.movie-image {
+    height: 370px;
+    width: 250px;
+}
+.ticket-right {
+    flex: 4;
+}
+.theatre-name {
+    font-family: Corbel;
+    color: #ba2704;
+    font-size: 35pt;
+}
+.movie-name {
+    background-color: #364f78;
+    font-family: Copperplate Gothic;
+    font-weight: 300;
+    color: #d9cebd;
+    font-size: 40pt;
+}
+.movie-category {
+    font-family: Corbel;
+    color: #d9cebd;
+    font-size: 13pt;
+}
+.user-details {
+    font-family: Corbel;
+    color: #364f78;
+    font-weight: 300;
+    font-size: 35pt;
+}
+.user-name {
+    flex: 1;
+    border: 2px solid #364f78;
+}
+.ticket-label {
+    flex: 1;
+    border: 2px solid #364f78;
+    border-left: none;
+}
+.ticket-number {
+    font-family: Calibri;
+    color: #ba2704;
+}
+.highlight-number {
+    font-family: Calibri;
+    color: #f3f4f7;
+    text-decoration: underline;
+}
+.show-promo {
+    background-color: #364f78;
+    font-family: Corbel;
+    font-weight: 300;
+    color: #d9cebd;
+    font-size: 18pt;
+}
+.show-promo-left{
+    flex: 5;
+    border-right: 2px solid #d9cebd;
+}
+.show-promo-right {
+    flex: 2;
+}
+.show-details {
+    color: #364f78;
+    font-family: Corbel;
+    font-weight: 300;
+    font-size: 30pt;
+}
+.theatre-city {
+    flex: 1;
+    border-right: 2px solid #364f78;
+}
+.seats {
+    flex: 4;
+}
+.seats-list {
+    list-style-type: none;
+}
+.seat-list-item {
+    list-style-type: none;
+    font-family: Calibri;
+}

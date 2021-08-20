@@ -21,20 +21,6 @@ public enum SeatStatus
     Available
 };
 
-public enum SeatType
-{
-    Normal,
-    Executive,
-    Premium,
-    VIP
-};
-
-public enum PaymentStatus
-{
-    Paid,
-    Unpaid
-};
-
 public enum City
 {
     Hyderabad,

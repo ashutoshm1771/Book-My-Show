@@ -1,0 +1,26 @@
+<div class="jumbotron container">
+    <div class="d-flex flex-column">
+        <div class="d-flex flex-column text-center mb-5">
+            <span class="movie-name">{{movie.Name}}</span>
+            <small>Book a slot in any of these theatres.</small>
+        </div>
+        <div *ngIf="theatreShows.length != 0; else elseBlock">
+            <div class="container-fluid row d-flex pl-5 w-100">
+              <div class="theatres-card w-100 text-left pl-3 pt-3">
+                <div class="header pt-2 pb-4">Available Shows</div>
+                <div
+                  class="card  w-100 text-left pointer-cursor"
+                  *ngFor="let show of theatreShows"
+                  [routerLink]="['/viewSeats', movieId, show.TheatreId, show.Time]"
+                >
+                  <div class="card-body d-flex justify-content-between">
+                    <div class="card-title person-name">{{ show.Name }}</div>
+                    <div class="card-text mt-3"><button class="btn btn-warning">{{show.Time}}</button></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ng-template #elseBlock><h1 class="m-5">No shows available!!</h1></ng-template>
+    </div>
+</div>

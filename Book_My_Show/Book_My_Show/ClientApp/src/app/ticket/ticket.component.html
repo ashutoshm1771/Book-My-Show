@@ -1,0 +1,53 @@
+<div class="container-fluid page-wrapper">
+    <div class="page-caption text-center mt-1 ">
+        Thank You for using BookMyShow!!
+        <div class="home-button text-right">
+            <button class="btn btn-primary" [routerLink]="['/']">Home Page</button>
+        </div>
+    </div> <hr />
+    <div class="container ticket-container d-flex flex-column justify-content-center jumbotron">
+        <h1 class="text-center mb-5 ticket-header">Your Ticket for <u>{{movie.Name}}</u></h1>
+        <div class="ticket mt-5  d-flex justify-content-between">
+            <div class="ticket-left">
+                <img [src]="movie.ThemePhotoPath" class="movie-image"/><br/>
+            </div>
+            <div class="ticket-right">
+                <div class="theatre-name mt-2 mb-2 text-center">
+                    {{theatre.Name}}
+                </div>
+                <div class="movie-name mt-3 text-center">
+                    {{movie.Name}} <small class="movie-category">{{movie.Category}}</small>
+                </div>
+                <div class="user-details m-0 p-0 d-flex justify-content-between">
+                    <div class="user-name text-center">
+                        {{userName}}
+                    </div>
+                    <div class="ticket-label text-center">
+                        Ticket No: <span class="ticket-number">{{ticket.Id}}</span>
+                    </div>
+                </div>
+                <div class="show-promo d-flex">
+                    <div class="show-promo-left text-center">
+                        Enjoy your <span class="highlight-number">{{movie.Genre}}</span> movie at <span class="highlight-number">{{showTime}}</span> on <span class="highlight-number">{{movie.ReleaseDate.substring(0,10)}}</span>
+                    </div>
+                    <div class="show-promo-right text-center">
+                        <div class="price-details">
+                            Price: Rs. <span class="highlight-number">{{ticketPrice}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="show-details p-1 d-flex justify-content-between">
+                    <div class="theatre-city pt-2 text-center">
+                        {{theatre.City}}
+                    </div>
+                    <div class="seats pt-2 pl-1 d-flex">
+                        Seat(s): 
+                        <ul class="seats-list d-flex">
+                            <li class="seat-list-item" *ngFor="let seat of seats"> {{seat}} &nbsp;</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

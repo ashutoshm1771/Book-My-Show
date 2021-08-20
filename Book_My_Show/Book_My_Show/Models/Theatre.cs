@@ -17,6 +17,5 @@ namespace Book_My_Show.Models
         [EnumDataType(typeof(City))]
         public string City { get; set; }
 
-        public int NumberOfHalls { get; set; }
     }
 }

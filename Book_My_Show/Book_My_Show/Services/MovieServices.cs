@@ -68,28 +68,6 @@ namespace Book_My_Show.Services
             return _db.Query<Movie>(sqlQuery, new { @ActorName = ActorName , @ActressName = ActressName }).ToList();
         }
 
-        public byte[] GetCoverPhoto(int id)
-        {
-            var sqlQuery = "SELECT CoverPhoto FROM Movies where Id = @id";
-            return _db.Query<byte[]>(sqlQuery, new { @Id = id }).Single();
-        }
-
-        public byte[] GetThemePhoto(int id)
-        {
-            var sqlQuery = "SELECT ThemePhoto FROM Movies where Id = @id";
-            return _db.Query<byte[]>(sqlQuery, new { @Id = id }).Single();
-        }
-
-        public byte[] GetImage(string sBase64String)
-        {
-            byte[] bytes = null;
-            if( !string.IsNullOrEmpty(sBase64String))
-            {
-                bytes = Convert.FromBase64String(sBase64String);
-            }
-            return bytes;
-        }
-
         public void Update(Movie movie)
         {
             var sqlQuery = "UPDATE Movies SET Name = @Name, ImbdRating = @ImbdRating, Category = @Category, Genre = @Genre, ReleaseDate = @ReleaseDate, ActorName = @ActorName, ActressName = @ActressName, CoverPhoto = @CoverPhoto, ThemePhoto = @ThemePhoto where Id = @Id";

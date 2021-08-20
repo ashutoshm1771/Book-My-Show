@@ -57,6 +57,8 @@ namespace Book_My_Show
             containerBuilder.RegisterType<MovieServices>().As<IMovieServices>();
             containerBuilder.RegisterType<TheatreServices>().As<ITheatreServices>();
             containerBuilder.RegisterType<ShowServices>().As<IShowServices>();
+            containerBuilder.RegisterType<TicketServices>().As<ITicketServices>();
+            containerBuilder.RegisterType<SeatServices>().As<ISeatService>();
             var container = containerBuilder.Build();
             return new AutofacServiceProvider(container);
         }

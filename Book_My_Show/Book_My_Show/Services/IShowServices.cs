@@ -14,7 +14,9 @@ namespace Book_My_Show.Services
 
         public List<Show> GetByMovieId(int Id);
 
-        public List<Show> GetByMovieAndCity(string MovieName, string City);
+        public List<Movie> GetByMovieAndCity(string MovieName, string City);
+
+        public List<ShowMovieModel> GetShowByMovieAndCity(string MovieName, string City);
 
         public Show GetByMovieAndTheatre(int MovieId, int TheatreId);
 

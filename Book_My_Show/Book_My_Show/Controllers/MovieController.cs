@@ -30,7 +30,7 @@ namespace Book_My_Show.Controllers
         }
 
         [HttpGet("{id}")]
-        public JsonResult Get(int id)
+        public JsonResult GetById(int id)
         {
             var movie = _movieServices.Get(id);
             return new JsonResult(movie);
@@ -43,28 +43,32 @@ namespace Book_My_Show.Controllers
             return new JsonResult(moviesList);
         }
 
-        [HttpGet("{category}")]
-        public JsonResult Get(MovieCategory category)
+
+        [HttpGet("category/{category}")]
+        public JsonResult GetByCategory(MovieCategory category)
         {
             var movie = _movieServices.GetByCategory(category);
             return new JsonResult(movie);
         }
 
-        [HttpGet("{genre}")]
-        public JsonResult Get(MovieGenre genre)
+
+        [HttpGet("genre/{genre}")]
+        public JsonResult GetByGenre(MovieGenre genre)
         {
             var movie = _movieServices.GetByGenre(genre);
             return new JsonResult(movie);
         }
 
-        [HttpGet("{name}")]
+
+        [HttpGet("name/{name}")]
         public JsonResult Get(string name)
         {
             var movie = _movieServices.GetByName(name);
             return new JsonResult(movie);
         }
 
-        [HttpGet("{actorName,actressName}")]
+
+        [HttpGet("actorName/{actorName}/actressName/{actressName}")]
         public JsonResult GetByStarNames(string actorName,string actressName)
         {
             var movie = _movieServices.GetByStarNames(actorName,actressName);

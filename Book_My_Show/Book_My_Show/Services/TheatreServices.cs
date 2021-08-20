@@ -21,7 +21,7 @@ namespace Book_My_Show.Services
 
         public void Add(Theatre theatre)
         {
-            var sqlQuery = "INSERT INTO Theatre (Name,City,NumberOfHalls) VALUES (@Name,@City,@NumberOfHalls)";
+            var sqlQuery = "INSERT INTO Theatre (Name,City) VALUES (@Name,@City)";
             _db.Execute(sqlQuery, theatre);
         }
 

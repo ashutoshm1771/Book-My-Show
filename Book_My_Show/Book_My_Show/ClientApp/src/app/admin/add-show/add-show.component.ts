@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { movieModel, showModel, theatreModel } from 'src/app/ViewModels';
+import { movieModel, SeatModel, showModel, theatreModel } from 'src/app/ViewModels';
 
 @Component({
   selector: 'app-add-show',
@@ -18,6 +18,7 @@ export class AddShowComponent implements OnInit {
   currentShow: showModel = new showModel("",0,0);
   currentMovie: any = new movieModel(0,"",0,"","","","","","");
   currentTheatre: any = new theatreModel(0,"","",0);
+
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string,private _router: Router) {
     this.http = http;
@@ -41,6 +42,11 @@ export class AddShowComponent implements OnInit {
     this.http.post(this.baseUrl + 'api/show',this.currentShow).subscribe(result => {
       alert(result);
     }, error => console.error(error));
+    for(let i = 1 ; i <= 200 ; i++)
+    {
+      var currentSeat: SeatModel = new SeatModel(i,this.currentShow.Time,this.currentShow.TheatreId,this.currentShow.MovieId,'Available');
+      this.http.post(this.baseUrl + 'api/seat',currentSeat).subscribe(result => {}, error => console.error(error));
+    }
     this._router.navigate(['/admin']);
   }
 }

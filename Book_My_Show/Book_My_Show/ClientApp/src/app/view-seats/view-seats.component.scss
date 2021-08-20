@@ -1,0 +1,38 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+    padding: 2px;
+    margin-left: 20px;
+}
+
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #e9ecef;
+    border-radius: 1px;
+    padding: 3px;
+    margin: 2px;
+    cursor: pointer;
+    background-color: #b5f55b;
+}
+
+.grid-item:hover {
+    background-color: #d61b06;
+}
+
+.occupied-highlight {
+    background-color: #c98171;
+}
+
+.to-book-highlight {
+    background-color: #d61b06;
+}
+
+.proceed-button {
+    width: 220px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.number-of-seats {
+    width: 90px;
+}

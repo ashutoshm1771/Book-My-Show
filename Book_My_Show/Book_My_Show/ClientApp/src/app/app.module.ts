@@ -19,6 +19,10 @@ import { AddShowComponent } from './admin/add-show/add-show.component';
 import { AddBannerImageComponent } from './admin/add-banner-image/add-banner-image.component';
 import { ViewMoviesComponent } from './view-movies/view-movies.component';
 import { ViewMoviesCardsComponent } from './view-movies-cards/view-movies-cards.component';
+import { ViewMovieComponent } from './view-movie/view-movie.component';
+import { ViewTheatresComponent } from './view-theatres/view-theatres.component';
+import { ViewSeatsComponent } from './view-seats/view-seats.component';
+import { TicketComponent } from './ticket/ticket.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,11 @@ import { ViewMoviesCardsComponent } from './view-movies-cards/view-movies-cards.
     AddShowComponent,
     AddBannerImageComponent,
     ViewMoviesComponent,
-    ViewMoviesCardsComponent
+    ViewMoviesCardsComponent,
+    ViewMovieComponent,
+    ViewTheatresComponent,
+    ViewSeatsComponent,
+    TicketComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -49,7 +57,11 @@ import { ViewMoviesCardsComponent } from './view-movies-cards/view-movies-cards.
       { path: 'addMovie', component: AddMovieComponent},
       { path: 'addShow', component: AddShowComponent},
       { path: 'addBannerImage', component: AddBannerImageComponent},
-      { path: 'viewMovies/:city/:movie', component: ViewMoviesComponent}
+      { path: 'viewMovies/:city/:movie', component: ViewMoviesComponent},
+      { path: 'viewMovie/:movie/:city', component: ViewMovieComponent},
+      { path: 'viewTheatres/:movieId/:city', component: ViewTheatresComponent},
+      { path: 'viewSeats/:movieId/:theatreId/:showTime', component: ViewSeatsComponent},
+      { path: 'ticket/:userName/:movieId/:theatreId/:showTime/:seats', component: TicketComponent}
     ]), 
     NgbModule
   ],

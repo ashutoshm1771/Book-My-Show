@@ -1,0 +1,49 @@
+<div class="container d-flex flex-column justify-content-center jumbotron">
+    <h1 class="text-center mt-3 mb-5 ">Click on the seats to book</h1>
+    <div class="d-flex justify-content-between">
+        <div>
+            <small>Enter your name</small>
+            <input class="form-control" [(ngModel)]="userName" placeholder="User Name">
+        </div>
+        <div>
+            <small class="d-flex justify-content-end mt-1 mb-1 text-danger">Select the number of seats you want to book!</small>
+            <div class="d-flex justify-content-end mt-1 mb-5">
+                <button class="btn btn-danger" (click)="decrementNumberOfRequiredSeats()">
+                    <span class="glyphicon-minus">-</span>
+                </button>
+                <input
+                    class="btn number-of-seats"
+                    [(ngModel)]="numberOfRequiredSeats" />
+                <button class="btn btn-primary" (click)="incrementNumberOfRequiredSeats()">
+                    <span class="glyphicon-plus">+</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <h3 class="text-center text-info bg-dark mb-5">Screen Here!!</h3>
+    <div class="container align-center grid-container">
+        <div 
+            *ngFor='let in of getArray(maximumSeatCapacity) ;let i = index' 
+            class="grid-item" 
+            [class.occupied-highlight] = "seats[i].Availability == 'Occupied'"
+            (click)="markSeats(i+1);"
+            [class.to-book-highlight] = "toBook[i] == 1 "
+        >
+            {{i+1}}
+        </div>
+    </div>
+    <div class="buttons d-flex justify-content-end mt-5">
+    <button 
+        class="proceed-button btn btn-success mb-1 ml-1"
+        [disabled] = "isButtonDisabled" 
+        (click) = "bookTicket();"
+        >
+        Book Tickets
+    </button>
+    <button 
+        class="proceed-button btn btn-danger ml-1"
+        (click)="clearSelection();" >
+        Clear Selection
+    </button>
+    </div>
+</div>

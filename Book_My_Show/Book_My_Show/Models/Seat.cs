@@ -24,7 +24,7 @@ namespace Book_My_Show.Models
         [ForeignKey("Show"), Column(Order = 2)]
         public int MovieId { get; set; }
 
-        [ForeignKey("Ticket")]
+        [ForeignKey("Ticket")]              // Optional Foreign Key (nullable)
         public int TicketId { get; set; }
 
         [EnumDataType(typeof(SeatStatus))]

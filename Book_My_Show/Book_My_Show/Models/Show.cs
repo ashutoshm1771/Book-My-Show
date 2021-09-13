@@ -11,6 +11,7 @@ namespace Book_My_Show.Models
     {
         public string Time { get; set; }
 
+        // Data annotation 
         [ForeignKeyAttribute("Theatre")]
         public int TheatreId { get; set; }
 

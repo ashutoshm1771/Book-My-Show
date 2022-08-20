@@ -6,4 +6,4 @@ Autofac Dependency Injection Tool. <br>
 Automapper for Model mappings <br>
 NgBootstrap / JQuery for responsiveness. <br> 
 
-https://github.com/ashutoshm1771/Book-My-Show/blob/main/Book_My_Show/Component%20Flow.png
+<img src="https://github.com/ashutoshm1771/Book-My-Show/blob/main/Book_My_Show/Component%20Flow.png" />
